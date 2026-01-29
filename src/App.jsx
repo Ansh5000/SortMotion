@@ -38,7 +38,7 @@ function App() {
             <div className="flex items-center justify-center gap-3">
               <button
                 onClick={handleClick}
-                className="border-2 border-gray-800 px-5 py-1 rounded-lg"
+                className="cursor-pointer border-2 border-black px-5 py-1 rounded-full bg-orange-500 text-white text-2xl font-semibold"
               >
                 start
               </button>
