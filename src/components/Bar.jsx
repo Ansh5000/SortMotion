@@ -1,7 +1,13 @@
 const Bar = ({ value, outer, inner, index }) => {
+  const getBgColor = () => {
+    if (outer === index && inner === index) return "bg-purple-500";
+    if (outer === index) return "bg-blue-600";
+    if (inner === index) return "bg-yellow-400";
+    return "bg-gray-950";
+  };
   return (
     <div
-      className={`bg-gray-950 border w-7 border-green-400 ${outer === index && "bg-sky-500"} ${inner === index && "bg-yellow-400"} ${outer === index && inner === index && "bg-purple-500"}`}
+      className={`border border-green-400 w-7 ${getBgColor()}`}
       style={{ height: `${value}px` }}
     />
   );
