@@ -12,13 +12,10 @@ const selection_sort = async (setOuter, setInner, setArray, tempArray, n) => {
         setOuter(min);
       }
     }
-    if (min !== i) {
-      let temp = tempArray[i];
-      tempArray[i] = tempArray[min];
-      tempArray[min] = temp;
-      setArray([...tempArray]);
-      await sleep(50);
-    }
+    let temp = tempArray[i];
+    tempArray[i] = tempArray[min];
+    tempArray[min] = temp;
+    setArray([...tempArray]);
   }
 };
 
