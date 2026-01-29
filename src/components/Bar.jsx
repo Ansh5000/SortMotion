@@ -7,7 +7,7 @@ const Bar = ({ value, outer, inner, index }) => {
   };
   return (
     <div
-      className={`border border-green-400 w-7 ${getBgColor()}`}
+      className={`border border-slate-600 w-7 ${getBgColor()}`}
       style={{ height: `${value}px` }}
     />
   );
