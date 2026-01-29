@@ -3,8 +3,6 @@ import Bar from "./components/Bar";
 import bubble_sort from "./algorithms/Bubble_Sort";
 import selection_sort from "./algorithms/Selection_Sort";
 import insertion_sort from "./algorithms/Insertion_Sort";
-import merge_sort from "./algorithms/Merge_Sort";
-import quick_sort from "./algorithms/Quick_Sort";
 
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 function App() {
@@ -32,18 +30,18 @@ function App() {
       <div className="flex flex-col gap-4 h-screen w-[90vw] bg-gray-50 p-4">
         <header className="flex flex-col items-center justify-center gap-5 p-5 bg-blue-50 border border-gray-300 rounded-lg">
           <div className="flex items-center justify-evenly gap-5">
-            <button
-              onClick={handleClick}
-              className="border-2 border-gray-800 px-5 py-1 rounded-lg"
-            >
-              start
-            </button>
+            <button></button>
             <button></button>
           </div>
           <div className="flex items-center justify-evenly gap-5">
             <button></button>
             <div className="flex items-center justify-center gap-3">
-              <button></button>
+              <button
+                onClick={handleClick}
+                className="border-2 border-gray-800 px-5 py-1 rounded-lg"
+              >
+                start
+              </button>
               <button></button>
               <button></button>
               <button></button>
