@@ -3,8 +3,8 @@ import Bar from "./components/Bar";
 import bubble_sort from "./algorithms/Bubble_Sort";
 import selection_sort from "./algorithms/Selection_Sort";
 import insertion_sort from "./algorithms/Insertion_Sort";
+import Traverser from "./algorithms/Traverser";
 
-const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 function App() {
   const [array, setArray] = useState([
     45, 92, 18, 77, 61, 33, 100, 58, 27, 84, 11, 69, 73, 56, 90, 25, 39, 88, 64,
@@ -16,14 +16,19 @@ function App() {
     let tempArray = [...array];
     let n = tempArray.length;
 
-    await bubble_sort(setOuter, setInner, setArray, tempArray, n);
+    // await bubble_sort(setOuter, setInner, setArray, tempArray, n);
+    // setInner(-1);
+    // await Traverser(setOuter,tempArray,n)
 
     // await selection_sort(setOuter, setInner, setArray, tempArray, n);
+    // setInner(-1);
+    // await Traverser(setOuter,tempArray,n)
 
-    // await insertion_sort(setOuter, setInner, setArray, tempArray, n);
+    await insertion_sort(setOuter, setInner, setArray, tempArray, n);
+    setInner(-1);
+    await Traverser(setOuter,tempArray,n)
 
     setOuter(-1);
-    setInner(-1);
   };
   return (
     <div className="flex items-center justify-center">
