@@ -1,5 +1,12 @@
 import sleep from "../utils/sleep";
-const bubble_sort = async (setOuter, setInner, setArray, tempArray, n) => {
+const bubble_sort = async (
+  setOuter,
+  setInner,
+  setArray,
+  tempArray,
+  time,
+  n,
+) => {
   for (let i = 0; i < n - 1; i++) {
     setOuter(i);
     let swapped = false;
@@ -12,7 +19,7 @@ const bubble_sort = async (setOuter, setInner, setArray, tempArray, n) => {
         setArray([...tempArray]);
         swapped = true;
       }
-      await sleep(50);
+      await sleep(time.current);
     }
     if (!swapped) break;
   }

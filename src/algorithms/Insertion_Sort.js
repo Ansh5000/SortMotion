@@ -1,6 +1,13 @@
 import sleep from "../utils/sleep";
 
-const insertion_sort = async (setOuter, setInner, setArray, tempArray, n) => {
+const insertion_sort = async (
+  setOuter,
+  setInner,
+  setArray,
+  tempArray,
+  time,
+  n,
+) => {
   for (let i = 1; i < n; i++) {
     let key = tempArray[i];
     setOuter(i);
@@ -10,10 +17,9 @@ const insertion_sort = async (setOuter, setInner, setArray, tempArray, n) => {
       tempArray[j + 1] = tempArray[j];
       setArray([...tempArray]);
       j--;
-      await sleep(50);
+      await sleep(time.current);
     }
     tempArray[j + 1] = key;
-    await sleep(50);
   }
 };
 

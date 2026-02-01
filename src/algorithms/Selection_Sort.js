@@ -1,12 +1,19 @@
 import sleep from "../utils/sleep";
 
-const selection_sort = async (setOuter, setInner, setArray, tempArray, n) => {
+const selection_sort = async (
+  setOuter,
+  setInner,
+  setArray,
+  tempArray,
+  time,
+  n,
+) => {
   for (let i = 0; i < n - 1; i++) {
     let min = i;
     setOuter(min);
     for (let j = i + 1; j < n; j++) {
       setInner(j);
-      await sleep(50);
+      await sleep(time.current);
       if (tempArray[min] > tempArray[j]) {
         min = j;
         setOuter(min);
