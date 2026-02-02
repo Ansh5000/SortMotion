@@ -1,11 +1,13 @@
-const AlgoSelect = ({selectedAlgo,handleChange,isRunning}) => {
+const AlgoSelect = ({ selectedAlgo, handleChange, isRunning }) => {
   return (
     <select
       id="algorithms"
       value={selectedAlgo}
       onChange={handleChange}
       className={`rounded-lg p-1.5 transition-colors ${
-        isRunning ? "bg-gray-100 cursor-not-allowed text-gray-400 border-2 border-gray-300" : "bg-white cursor-pointer text-gray-700 border-2 border-gray-900"
+        isRunning
+          ? "bg-gray-100 cursor-not-allowed text-gray-400 border-2 border-gray-300"
+          : "bg-white cursor-pointer text-gray-700 border-2 border-gray-900"
       }`}
       disabled={isRunning}
     >
@@ -15,6 +17,7 @@ const AlgoSelect = ({selectedAlgo,handleChange,isRunning}) => {
       <option value="bubble">Bubble Sort</option>
       <option value="selection">Selection Sort</option>
       <option value="insertion">Insertion Sort</option>
+      <option value="merge">Merge Sort</option>
     </select>
   );
 };
