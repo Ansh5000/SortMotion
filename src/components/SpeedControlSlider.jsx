@@ -17,8 +17,8 @@ const SpeedControlSlider = ({ speed, setSpeed, min, max }) => {
   return (
     <div className="w-96">
       <div className="flex justify-between text-xs font-semibold text-gray-600">
-        <span>{min}</span>
-        <span>{max}</span>
+        <span>{min}ms</span>
+        <span>{max}ms</span>
       </div>
       <div className="relative">
         <div
