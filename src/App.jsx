@@ -3,6 +3,7 @@ import Bar from "./components/Bar";
 import bubble_sort from "./algorithms/Bubble_Sort";
 import selection_sort from "./algorithms/Selection_Sort";
 import insertion_sort from "./algorithms/Insertion_Sort";
+import merge_sort from "./algorithms/Merge_Sort";
 import Traverser from "./algorithms/Traverser";
 import SpeedControlSlider from "./components/SpeedControlSlider";
 import AlgoSelect from "./components/AlgoSelect";
@@ -38,17 +39,24 @@ function App() {
 
     switch (selectedAlgo) {
       case "bubble":
-        started = true
+        started = true;
         setIsRunning(true);
         await bubble_sort(setOuter, setInner, setArray, tempArray, speedRef, n);
         break;
       case "selection":
-        started = true
+        started = true;
         setIsRunning(true);
-        await selection_sort(setOuter, setInner, setArray, tempArray, speedRef, n);
+        await selection_sort(
+          setOuter,
+          setInner,
+          setArray,
+          tempArray,
+          speedRef,
+          n,
+        );
         break;
       case "insertion":
-        started = true
+        started = true;
         setIsRunning(true);
         await insertion_sort(
           setOuter,
@@ -59,12 +67,17 @@ function App() {
           n,
         );
         break;
+      case "merge":
+        started = true;
+        setIsRunning(true);
+        await merge_sort(setOuter, setInner, setArray, tempArray, speedRef, n);
+        break;
       case "nothing":
         alert("Please select an algorithm");
-        return
+        return;
       default:
         alert("Please select an algorithm");
-        return
+        return;
     }
     if (started) {
       setInner(-1);
@@ -78,7 +91,11 @@ function App() {
       <div className="flex flex-col gap-4 h-screen w-[90vw] bg-gray-50 p-4">
         <header className="flex flex-col items-center justify-center gap-8 py-5 px-16 bg-blue-50 border border-gray-300 rounded-lg">
           <div className="flex items-center justify-between gap-5 w-full">
-            <AlgoSelect selectedAlgo={selectedAlgo} handleChange={handleChange} isRunning={isRunning}/>
+            <AlgoSelect
+              selectedAlgo={selectedAlgo}
+              handleChange={handleChange}
+              isRunning={isRunning}
+            />
             <button></button>
           </div>
           <div className="flex items-center justify-between gap-5 w-full">
