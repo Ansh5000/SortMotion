@@ -7,6 +7,7 @@ import merge_sort from "./algorithms/Merge_Sort";
 import Traverser from "./algorithms/Traverser";
 import SpeedControlSlider from "./components/SpeedControlSlider";
 import AlgoSelect from "./components/AlgoSelect";
+import ShuffleButton from "./components/ShuffleButton";
 
 function App() {
   const [array, setArray] = useState([
@@ -112,7 +113,11 @@ function App() {
               >
                 start
               </button>
-              <button></button>
+              <ShuffleButton
+                array={[...array]}
+                setArray={setArray}
+                isRunning={isRunning}
+              />
               <button></button>
               <button></button>
             </div>
