@@ -1,8 +1,9 @@
-import { useRef, useState } from "react";
+import { useState } from "react";
 import RangeSlider from "react-range-slider-input";
 import "react-range-slider-input/dist/style.css";
-const ElementsRangeSlider = ({ isRunning }) => {
-  const [range, setRange] = useState([10, 60]);
+import randomArrayGenerator from "../utils/randomArrayGenerator";
+const ElementsRangeSlider = ({ isRunning, array, setArray }) => {
+  const [range, setRange] = useState([20, 80]);
   return (
     <div className="flex flex-col gap-3 w-2/5">
       <div className="flex items-center justify-between text-sm font-semibold text-gray-500 mx-1">
@@ -10,11 +11,16 @@ const ElementsRangeSlider = ({ isRunning }) => {
         <p>{range[1]}</p>
       </div>
       <RangeSlider
-        min={10}
-        max={250}
+        min={20}
+        max={120}
         disabled={isRunning}
         value={range}
-        onInput={setRange}
+        onInput={(values) => {
+          setRange(values);
+        }}
+        onThumbDragEnd={() => {
+          randomArrayGenerator(array, setArray, range[0], range[1]);
+        }}
       />
     </div>
   );

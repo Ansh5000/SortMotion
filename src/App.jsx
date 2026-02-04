@@ -98,7 +98,11 @@ function App() {
               handleChange={handleChange}
               isRunning={isRunning}
             />
-            <ElementsRangeSlider />
+            <ElementsRangeSlider
+              isRunning={isRunning}
+              array={array}
+              setArray={setArray}
+            />
           </div>
           <div className="flex items-center justify-between gap-5 w-full">
             <SpeedControlSlider
