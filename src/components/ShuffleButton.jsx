@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import shuffleArray from "../utils/shuffleArray";
 
 const ShuffleButton = ({ array, setArray, isRunning }) => {
