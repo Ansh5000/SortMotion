@@ -9,11 +9,14 @@ import SpeedControlSlider from "./components/SpeedControlSlider";
 import AlgoSelect from "./components/AlgoSelect";
 import ShuffleButton from "./components/ShuffleButton";
 import ElementsRangeSlider from "./components/ElementsRangeSlider";
+import ExecuteButton from "./components/ExecuteButton";
 
 function App() {
   const [array, setArray] = useState([
-    45, 92, 18, 77, 61, 33, 100, 58, 27, 84, 11, 69, 73, 56, 90, 25, 39, 88, 64,
-    71, 15, 97, 42, 59, 81, 20, 66, 74, 53, 99, 31, 60, 86, 49, 17, 95, 36, 72,
+    74, 21, 58, 43, 67, 32, 79, 51, 26, 60, 38, 45, 71, 29, 54, 63, 22, 80, 47,
+    35, 66, 59, 24, 73, 41, 56, 30, 49, 77, 62, 23, 50, 68, 37, 75, 42, 55, 31,
+    69, 28, 44, 70, 53, 27, 61, 39, 76, 33, 57, 48, 25, 64, 40, 72, 36, 52, 78,
+    46, 34, 65,
   ]);
   const [isRunning, setIsRunning] = useState(false);
   const [outer, setOuter] = useState(-1);
@@ -112,12 +115,7 @@ function App() {
               max={max}
             />
             <div className="flex items-center justify-center gap-3">
-              <button
-                onClick={handleClick}
-                className="cursor-pointer border-2 border-black px-5 py-0.5 rounded-xl bg-orange-500 text-white text-2xl font-semibold"
-              >
-                start
-              </button>
+              <ExecuteButton onclick={handleClick} />
               <ShuffleButton
                 array={[...array]}
                 setArray={setArray}
