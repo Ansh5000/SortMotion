@@ -16,7 +16,9 @@ const ElementsRangeSlider = ({ isRunning, array, setArray }) => {
         disabled={isRunning}
         value={range}
         onInput={(values) => {
-          setRange(values);
+          if (values[1] > values[0]) {
+            setRange(values);
+          }
         }}
         onThumbDragEnd={() => {
           randomArrayGenerator(array, setArray, range[0], range[1]);
