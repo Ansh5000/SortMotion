@@ -8,6 +8,7 @@ import Traverser from "./algorithms/Traverser";
 import SpeedControlSlider from "./components/SpeedControlSlider";
 import AlgoSelect from "./components/AlgoSelect";
 import ShuffleButton from "./components/ShuffleButton";
+import ElementsRangeSlider from "./components/ElementsRangeSlider";
 
 function App() {
   const [array, setArray] = useState([
@@ -97,7 +98,7 @@ function App() {
               handleChange={handleChange}
               isRunning={isRunning}
             />
-            <button></button>
+            <ElementsRangeSlider />
           </div>
           <div className="flex items-center justify-between gap-5 w-full">
             <SpeedControlSlider
