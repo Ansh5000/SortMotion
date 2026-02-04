@@ -90,7 +90,7 @@ function App() {
   };
   return (
     <div className="flex items-center justify-center">
-      <div className="flex flex-col gap-4 h-screen w-[90vw] bg-gray-50 p-4">
+      <div className="flex flex-col gap-4 h-screen w-[91vw] bg-gray-50 p-4">
         <header className="flex flex-col items-center justify-center gap-8 py-5 px-16 bg-blue-50 border border-gray-300 rounded-lg">
           <div className="flex items-center justify-between gap-5 w-full">
             <AlgoSelect
