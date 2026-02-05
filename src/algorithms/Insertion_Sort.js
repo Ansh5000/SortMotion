@@ -20,6 +20,8 @@ const insertion_sort = async (
       await sleep(time.current);
     }
     tempArray[j + 1] = key;
+    setArray([...tempArray]);
+    await sleep(time.current);
   }
 };
 
