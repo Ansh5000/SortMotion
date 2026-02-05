@@ -10,6 +10,7 @@ import AlgoSelect from "./components/AlgoSelect";
 import ShuffleButton from "./components/ShuffleButton";
 import ElementsRangeSlider from "./components/ElementsRangeSlider";
 import ExecuteButton from "./components/ExecuteButton";
+import quick_Sort from "./algorithms/Quick_Sort";
 
 function App() {
   const [array, setArray] = useState([
@@ -21,6 +22,7 @@ function App() {
   const [isRunning, setIsRunning] = useState(false);
   const [outer, setOuter] = useState(-1);
   const [inner, setInner] = useState(-1);
+  const [pivot, setPivot] = useState(-1);
   const [speed, setSpeed] = useState(50);
   const speedRef = useRef(speed);
   const min = 20;
@@ -77,6 +79,19 @@ function App() {
         setIsRunning(true);
         await merge_sort(setOuter, setInner, setArray, tempArray, speedRef, n);
         break;
+      case "quick":
+        started = true;
+        setIsRunning(true);
+        await quick_Sort(
+          setOuter,
+          setInner,
+          setPivot,
+          setArray,
+          tempArray,
+          speedRef,
+          n,
+        );
+        break;
       case "nothing":
         alert("Please select an algorithm");
         return;
@@ -86,6 +101,7 @@ function App() {
     }
     if (started) {
       setInner(-1);
+      setPivot(-1);
       await Traverser(setOuter, n);
       setOuter(-1);
     }
@@ -136,6 +152,7 @@ function App() {
                   outer={outer}
                   inner={inner}
                   index={index}
+                  pivot={pivot}
                 />
               );
             })}
