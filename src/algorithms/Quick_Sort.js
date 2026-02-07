@@ -79,7 +79,7 @@ const partition = async (
   let pivot = arr[high];
 
   let i = low - 1;
-  setPivot(high);
+  setPivot(Math.floor((low+high)/2));
   for (let j = low; j < high; j++) {
     setOuter(i);
     setInner(j);
